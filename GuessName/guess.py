@@ -3,28 +3,33 @@ import random
 lives = 10
 words = ['pays','jeu','montagne','ville','amusant','rigoureux','voyou','course','aide','selection','edition','fichier','depart']
 mot_secret = random.choice(words)
-cl_len =len(mot_secret)
-cl_le = '?'*cl_len
-lis_cle_le = list(cl_le)
+# cl_len =len(mot_secret)
+# cl_le = '?'*cl_len
+# lis_cle_le = list(cl_le)
+clue = []
 # print(lis_cle_le)
+index = 0
+while index <len(mot_secret):
+    clue.append('?')
+    index += 1
 heart = u'  \u2764  '
 # print(heart)
 correct_guess = False
 
-def my_clue(geuss, mot_secret, lis_cle_le):
+def my_clue(geuss, mot_secret, clue):
     index = 0
     # guu[cl_len] = list('')
     # if index == 0:
     #     guu[cl_len+1] =''
-    while index < cl_len :
+    while index < len(clue) :
         if guess == mot_secret[index]:
-            lis_cle_le[index] = geuss
+            clue[index] = geuss
             # guu[index] = guess
         index += 1
-    if guu == lis_cle_le:
-        print("Completed")
+    # if guu == lis_cle_le:
+    #     print("Completed")
 while lives > 0:
-    print(lis_cle_le)
+    print(clue)
     print('Left Lives: ' + heart * lives)
     guess =input('Guess a letter or the whole word:  ')
 
@@ -33,7 +38,7 @@ while lives > 0:
         print("This is amazing!!!!")
         break
     if guess in mot_secret :
-        my_clue(guess, mot_secret, lis_cle_le)
+        my_clue(guess, mot_secret, clue)
     else:
         print("Incorrect. Try again but you lose one life")
 
