@@ -9,16 +9,19 @@ def draw_circles(size,angle,shift,shape):
     next_shape =''
     if shape == 'circle':
         t.circle(size)
+        t.pencolor(next(colors))
+
         next_shape ='square'
     elif shape == 'square':
         for count in range(0,4):
             t.forward(size +2 )
             t.left(90)
         next_shape ='circle'
+        t.pencolor(next(colors))
+
     t.right(angle)
     t.forward(shift)
-    draw_circles(size+ 4 , angle + 1 ,shift, next_shape)
-    # t.pencolor(next(colors))
+    draw_circles(size+ 4 , angle + 1 ,shift + 1, next_shape)
     # t.circle(size)
     # t.right(angle)
     # t.forward(shift)
