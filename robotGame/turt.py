@@ -96,4 +96,12 @@ tur.goto(-65,135)
 forme(40,5,'black')
 
 tur.hideturtle()
-# pause()
+# hands
+tur.goto(-155, 130)
+forme(25,25,'white')
+tur.goto(-147,130)
+forme(10,15,tur.bgcolor())
+tur.goto(50, 130)
+forme(25,25,'white')
+tur.goto(58,130)
+forme(10,15,tur.bgcolor())
