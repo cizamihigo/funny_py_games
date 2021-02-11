@@ -6,3 +6,5 @@ when the PC is spleeping there are such images which were designed on the deskto
 >>> EACH NEW CIRCLE IS DIFFERENT FROM THE LAST ONE DRAWN, MAKING THE PATTERN MORE INTERESTING.
 **Night.py** : The night you dreamed about. stars, in the sky, lightning just for you in the night. The longer you
 leave the program running, the more fantastic and colorful the sky becomes.
+**lines.py** : another Windows XP sleep screen implementation/
+this is now using lines and randomly display them till the limit the user entered. this is the only implementation changed from WinXP
