@@ -8,7 +8,7 @@ def get_events():
             evenement = line.split(',')
             #event_date = datetime.strptime(evenement[0],'%d/%m/%y').date()
             detime = datetime.strptime(evenement[0], '%d/%m/%Y').date()
-            print(detime)
+            #print(detime)
             evenement[0] = detime
             list_events.append(evenement)
     return list_events
@@ -27,15 +27,21 @@ c.create_text(250,680, anchor = 'nw', fill = 'white' \
 get_events()
 events =  get_events()
 today =date.today()
-
+love = u' \u2763 '
 vertial_space = 100
 events.sort(key= lambda x: x[1])
 for event in events:
     event_name = event[1]
     day_till = date2date(event[0],today)
     display = 'It is %s days until %s (Date: %s)' %(day_till, event_name, event[0])
-    c.create_text(100,vertial_space,anchor='w', fill= 'pink',\
-        font = 'Courier 12 bold', text = display)
+    if(int(day_till) <= 41):
+        text_col = "red"
+        #c.create_text(100,vertical_space, anchor='w' text= love)
+        
+    else:
+        text_col ='Light blue'
+    c.create_text(100,vertial_space,anchor='w', fill= text_col,\
+        font = 'Courier 12 bold', text = display )
     vertial_space += 30
 
 
