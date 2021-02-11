@@ -1,15 +1,22 @@
 from tkinter import Tk, Canvas
 from datetime import date, datetime
 def get_events():
-    list_events= []
-    with open('CountDown/events.txt') as file:
+    # list_events= []
+    # with open('CountDown/events.txt') as file:
+    #     for line in file:
+    #         line = line.rstrip('\n')
+    #         current_event = line.split(',') 
+    #         print(current_event)
+    #         event_date = datetime.strptime(current_event[0], "%d/%m/%y").date()
+    #         current_event[0] = event_date
+    #         list_events.append(current_event)
+    list_events = []
+    with open("CountDown/events.txt") as file:
         for line in file:
             line = line.rstrip('\n')
-            current_event = line.split(',') 
-            event_date = datetime.strptime(current_event[0], '%d/%m/%y').date()
-            current_event[0] = event_date
-            list_events.append(current_event)
-
+            evenement = line.split(',')
+            event_date = datetime.strftime('%d/%m/%y', date('%d/%m/%y').evenement[0])
+            print(event_date)
     return list_events
 def date2date(date1, date2):
     time_elapsed = str(date1 -date2)
