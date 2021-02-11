@@ -29,8 +29,14 @@ def inside_window():
     inside = leftlimit < x < rightlimit and bottom_limit < y < top_limit
     return inside
 def move(line_len):
-    pen_colors =['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-    t.pencolor(random.choice(pen_colors))
+    # pen_colors =['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+    # t.pencolor(random.choice(pen_colors))
+    t.colormode(255)
+    red = random.randint(0,255)
+    blue = random.randint(0,255)
+    green = random.randint(0,255)
+
+    t.pencolor(red, blue, green)
     if inside_window():
         angle = random.randint(0,180)
         t.right(angle)
