@@ -11,9 +11,9 @@ from random import randint, random
 #     t.right(angle)
 # t.end_fill()
 
-def draw_stars(points, size, col, x,y):
+def draw_stars(points, size, col):
     t.penup()
-    t.goto(x,y)
+    t.onscreenclick(fun(x,y))
     t.pendown()
 
     angle = 180 - (180 / points)
@@ -33,8 +33,9 @@ while True:
     ranPt = randint(2,5) * 2 + 1
     ransize = randint(10,50)
     rancol =(random(),random(),random()) 
-    ranX = randint(-350,300)
-    ranY = randint(-250, 250)
-    
-    draw_stars(ranPt, ransize, rancol, ranX, ranY)
+    # ranX = randint(-350,300)
+    # ranY = randint(-250, 250)
+
+    t.onscreenclick(draw_stars(ranPt, ransize, rancol))
+    # t.onclick()
 # t.Screen().mainloop()
