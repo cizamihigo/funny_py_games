@@ -1,4 +1,5 @@
 import turtle as tur
+# import tkinter as tk
 
 
 def forme(vert, hori, color):
