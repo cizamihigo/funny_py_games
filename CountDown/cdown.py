@@ -6,8 +6,8 @@ def get_events():
         for line in file:
             line = line.rstrip('\n')
             current_event = line.split(',') 
-            event_date = datetime.strptime(current_event[1], '%d/%m/%y').date()
-            current_event[1] = event_date
+            event_date = datetime.strptime(current_event[0], '%d/%m/%y').date()
+            current_event[0] = event_date
             list_events.append(current_event)
 
     return list_events
@@ -26,6 +26,13 @@ c.create_text(250,680, anchor = 'nw', fill = 'white' \
 
 events = get_events()
 today =date.today()
+
+for event in events:
+    event_name = event[0]
+    day_till = date2date(event[0],today)
+    display = 'It is %s days unitl %s' %(day_till, event_name)
+    c.create_text(100,100,anchor='west', fill= 'light blue',\
+        font = 'Times New Roman 19 bold', text = display)
 
 
 
