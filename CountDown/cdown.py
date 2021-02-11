@@ -28,12 +28,14 @@ get_events()
 events =  get_events()
 today =date.today()
 
+vertial_space = 100
 for event in events:
-    event_name = event[0]
+    event_name = event[1]
     day_till = date2date(event[0],today)
-    display = 'It is %s days unitl %s' %(day_till, event_name)
-    c.create_text(100,100,anchor='w', fill= 'light blue',\
-        font = 'Arial 19 bold', text = display)
+    display = 'It is %s days until %s (Date: %s)' %(day_till, event_name, event[0])
+    c.create_text(100,vertial_space,anchor='w', fill= 'light blue',\
+        font = 'Arial 12 bold', text = display)
+    vertial_space += 30
 
 
 
