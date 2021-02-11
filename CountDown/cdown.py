@@ -15,8 +15,11 @@ def get_events():
         for line in file:
             line = line.rstrip('\n')
             evenement = line.split(',')
-            event_date = datetime.strftime('%d/%m/%y', date('%d/%m/%y').evenement[0])
-            print(event_date)
+            #event_date = datetime.strptime(evenement[0],'%d/%m/%y').date()
+            detime = datetime.strptime(evenement[0], '%d/%m/%Y').date()
+            print(detime)
+            evenement[0] = detime
+            list_events.append(evenement)
     return list_events
 def date2date(date1, date2):
     time_elapsed = str(date1 -date2)
@@ -30,16 +33,16 @@ c.create_text(200, 50, anchor = 'w', fill='orange', \
     font ='Arial 28 bold underline', text ="CountDown Application")
 c.create_text(250,680, anchor = 'nw', fill = 'white' \
 ,font = 'Cambria 18 bold', text = "Made by @taketherisk11")
+get_events()
+# events = '1/01/2020' # get_events()
+# today =date.today()
 
-events = get_events()
-today =date.today()
-
-for event in events:
-    event_name = event[0]
-    day_till = date2date(event[0],today)
-    display = 'It is %s days unitl %s' %(day_till, event_name)
-    c.create_text(100,100,anchor='west', fill= 'light blue',\
-        font = 'Times New Roman 19 bold', text = display)
+# for event in events:
+#     event_name = event[0]
+#     day_till = date2date(event[0],today)
+#     display = 'It is %s days unitl %s' %(day_till, event_name)
+#     c.create_text(100,100,anchor='west', fill= 'light blue',\
+#         font = 'Times New Roman 19 bold', text = display)
 
 
 
