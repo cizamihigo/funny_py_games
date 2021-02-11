@@ -5,7 +5,7 @@ import random
 #  set the speed, background color, and pen size for the turtle
 colors = cycle(['red','blue','yellow','green', 'purple','light blue', 'thistle','hot pink', 'goldenrod','seashell','lawn green', 'peru','gold','maroon','navy','aquamarine','lemon chiffon', 'peach puff', 'deep pink', 'misty rose'])
 def draw_circles(size,angle,shift,shape):
-    t.bgcolor(next(colors))
+    # t.bgcolor(next(colors))
     next_shape =''
     if shape == 'circle':
         t.circle(size)
@@ -14,7 +14,7 @@ def draw_circles(size,angle,shift,shape):
         next_shape ='square'
     elif shape == 'square':
         for count in range(0,4):
-            t.forward(size +2 )
+            t.forward(size + 7 )
             t.left(90)
         next_shape ='circle'
         t.pencolor(next(colors))
@@ -30,4 +30,4 @@ t.speed('fast')
 
 t.pensize(4)
 
-draw_circles(5,0,1,'circle')
+draw_circles(5,0,1,'square')
