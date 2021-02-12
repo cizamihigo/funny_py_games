@@ -1,8 +1,19 @@
 import sqlite3 as sql
 
-cccc = sql.connect('captalesduMonde/Countries.db')
-ccc = cccc.cursor()
-ccc.execute("DELETE FROM Countries.CapCountry")
+# conn = sql.connect("captalesduMonde/Countries.db")
+
+# Ccon =conn.cursor()
+# create a Table for country names and capital
+# Ccon.execute("CREATE TABLE CapCountry(Id INTEGER PRIMARY KEY AUTOINCREMENT,\
+#     CountryName VARCHAR(255) UNIQUE,\
+#     CapitalName VARCHAR(200))")
+
+# Ccon.execute("INSERT INTO CapCountry(CountryName, CapitalName) VALUES('India', 'New Dheli'),('China', 'Beijing'),('France', 'Paris'), ('Congo', 'Brazzaville')")
+# conn.commit()
+
+# cccc = sql.connect('captalesduMonde/Countries.db')
+# ccc = cccc.cursor()
+# ccc.execute("DELETE FROM Countries.CapCountry")
 def database():
 
     conn = sql.connect("captalesduMonde/Countries.db")

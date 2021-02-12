@@ -33,10 +33,12 @@ while True:
         new_city = simpledialog.askstring('Teach me',
                                           'I dont\'t know! ' + 
                                           'what is the capital city of ' + q_country + ' ? ' )
-        result = wolrd[q_country]
-        if result == None:
-            new_city ='NOT SPECIFIED'
+        # result = q_country
+        if new_city == None:
+            new_city = 'NOT SPecified'
         # db.writting(q_country,new_city)
         Write_to_file(q_country,new_city)
         read_from_file()
+
+
 root.mainloop()
