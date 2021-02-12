@@ -1,4 +1,5 @@
 from tkinter import Tk, messagebox, simpledialog
+from random import choice
 
 def know_job():
     task = simpledialog.askstring('What to do!', 'Do you want to encrypt (1) or decrypt (2)?')
@@ -41,6 +42,15 @@ def decrypt(message):
     unreversed_msg = ''.join(reversed(message))
     decrypted_msg = swap_letters(unreversed_msg)
     return decrypted_msg
+# Adding fake letters now
+def lencrypt(message):
+    encrypted_list = []
+    fake_letters = ['a','c','f','d','s', 'y','r', 'w', 'o','p', 'g', 'i','x','z','v','b','n','+', '_', '-']
+    for counter in range(0, len(message)):
+        encrypted_list.append(message[counter])
+        encrypted_list.append(choice(fake_letters))
+    new_message = ''.join(encrypted_list)
+    return new_message
 root = Tk()
 while True:
     task = know_job()
