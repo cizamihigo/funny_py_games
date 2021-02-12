@@ -31,18 +31,26 @@ def swap_letters(message):
         letter_list.append(odd_letters[counter])
         letter_list.append(even_letters[counter])
     new_message = ''.join(letter_list)
+    new_message = new_message.rstrip(' ')
     return new_message
-
+def encrypt(message):
+    swap_msg = swap_letters(message)
+    encrypted_msg = ''.join(reversed(swap_msg))
+    return encrypted_msg
+def decrypt(message):
+    unreversed_msg = ''.join(reversed(message))
+    decrypted_msg = swap_letters(unreversed_msg)
+    return decrypted_msg
 root = Tk()
 while True:
     task = know_job()
     if task == 'encrypt' or task == '1' :
         message = write_msg()
-        encrypted = swap_letters(message)
+        encrypted = encrypt(message)
         messagebox.showinfo('cypher text of the secret message is:', encrypted)
     elif task == 'decrypt' or task == '2' :
         message = write_msg()
-        decrypted = swap_letters(message)
+        decrypted = decrypt(message)
         messagebox.showinfo('plain text message is: ', decrypted)
 
     else:
