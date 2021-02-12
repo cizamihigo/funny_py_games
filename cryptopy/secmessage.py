@@ -47,4 +47,4 @@ while True:
 
     else:
         break
-root.mainloop()
+root.withdraw()
