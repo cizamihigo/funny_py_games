@@ -21,11 +21,22 @@ wolrd ={}
 read_from_file()
 while True:
     q_country =simpledialog.askstring("Country AKILI", "Enter Countrie's Name: ")
-    q_country =list(q_country)
-    q_country[0] = q_country[0].upper()
-    
-    dd = str(q_country)
-    print(dd)
+    q_country = q_country.capitalize()
+    q_country= str(q_country)
+    # q_country[0] = q_country[0].upper()
+    # dd = str(q_country)
+    # print(dd)
     if q_country in wolrd:
         result = wolrd[q_country]
         messagebox.showinfo('Answer', 'The capital city of  ' + q_country + ' is ' + result + '!')
+    else:
+        new_city = simpledialog.askstring('Teach me',
+                                          'I dont\'t know! ' + 
+                                          'what is the capital city of ' + q_country + ' ? ' )
+        result = wolrd[q_country]
+        if result == None:
+            new_city ='NOT SPECIFIED'
+        # db.writting(q_country,new_city)
+        Write_to_file(q_country,new_city)
+        read_from_file()
+root.mainloop()

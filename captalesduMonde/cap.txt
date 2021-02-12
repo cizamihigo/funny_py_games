@@ -2,3 +2,7 @@ India, New Dheli
 China, Beijing
 France, Paris
 Congo, Brazzaville
+DRC, Kishasa
+Rwanda, Kigali
+Kigali, Rwanda
+Italy, Roma

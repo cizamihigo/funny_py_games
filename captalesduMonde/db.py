@@ -1,4 +1,8 @@
 import sqlite3 as sql
+
+cccc = sql.connect('captalesduMonde/Countries.db')
+ccc = cccc.cursor()
+ccc.execute("DELETE FROM Countries.CapCountry")
 def database():
 
     conn = sql.connect("captalesduMonde/Countries.db")
@@ -28,5 +32,5 @@ def writting(CountryName, Cityname):
     cco = co.cursor()
     cco.execute("INSERT INTO CapCountry(CountryName,CapitalName) VALUES (?,?)",(CountryName, Cityname))
     co.commit()
-    
+
     
