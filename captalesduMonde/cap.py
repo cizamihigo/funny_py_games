@@ -17,3 +17,15 @@ root = Tk()
 root.withdraw()
 
 wolrd ={}
+
+read_from_file()
+while True:
+    q_country =simpledialog.askstring("Country AKILI", "Enter Countrie's Name: ")
+    q_country =list(q_country)
+    q_country[0] = q_country[0].upper()
+    
+    dd = str(q_country)
+    print(dd)
+    if q_country in wolrd:
+        result = wolrd[q_country]
+        messagebox.showinfo('Answer', 'The capital city of  ' + q_country + ' is ' + result + '!')
