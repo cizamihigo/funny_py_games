@@ -51,16 +51,20 @@ def lencrypt(message):
         encrypted_list.append(choice(fake_letters))
     new_message = ''.join(encrypted_list)
     return new_message
+def ldecrypt(message):
+    decripted_let = get_even_l(message)
+    new_message = ''.join(decripted_let)
+    return new_message
 root = Tk()
 while True:
     task = know_job()
     if task == 'encrypt' or task == '1' :
         message = write_msg()
-        encrypted = encrypt(message)
+        encrypted = lencrypt(message)
         messagebox.showinfo('cypher text of the secret message is:', encrypted)
     elif task == 'decrypt' or task == '2' :
         message = write_msg()
-        decrypted = decrypt(message)
+        decrypted = ldecrypt(message)
         messagebox.showinfo('plain text message is: ', decrypted)
 
     else:
