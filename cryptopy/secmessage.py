@@ -24,7 +24,7 @@ def get_odd_l(message):
 def swap_letters(message):
     letter_list = []
     if not is_even(len(message)):
-        message = message + 'TxV'
+        message = 'Bl al ciza' + message + 'TxV'
     even_letters = get_even_l(message)
     odd_letters = get_odd_l(message)
     for counter in range(0, int(len(message)/2)):
