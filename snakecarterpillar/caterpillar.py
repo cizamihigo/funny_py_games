@@ -1,9 +1,5 @@
 import random
 import turtle as t
-game_started = False
-text_turtle = t.Turtle()
-text_turtle.write('Press SPACE to start', align= 'center',\
-    font= ('Arial',16,'bold'))
 
 t.bgcolor('light green')
 
@@ -25,6 +21,16 @@ leaf.penup()
 leaf.hideturtle()
 leaf.speed(0)
     # leaf.mainloop()
+game_started = False
+text_turtle = t.Turtle()
+text_turtle.write('Press SPACE to start', align= 'center',\
+    font= ('Arial',16,'bold'))
+text_turtle.hideturtle()
+
+score_turtle = t.Turtle()
+score_turtle.hideturtle()
+score_turtle.speed(0)
+
 def out_window():
     pass
 def game_over():
