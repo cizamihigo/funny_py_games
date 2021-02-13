@@ -104,11 +104,16 @@ def move_down():
 def move_left():
     if cterr.heading() == 270 or cterr.heading() == 90 :
         cterr.setheading(180)
-def move_left():
+def move_right():
     if cterr.heading() == 270 or cterr.heading() == 90 :
         cterr.setheading(0)
 
     
 t.onkey(start_game, 'space')
+t.onkey(move_down, 'Down')
+t.onkey(move_right, 'Right')
+t.onkey(move_up, 'Up')
+t.onkey(move_left, 'Left')
+
 t.listen()
 t.mainloop()
