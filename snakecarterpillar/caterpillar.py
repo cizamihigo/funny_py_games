@@ -63,7 +63,10 @@ def display_score(current_score):
     score_turtle.write(str(current_score), align='right',\
         font= ('Arial',30, 'bold'))
 def place_leaf():
-    pass
+    leaf.ht()
+    leaf.setx(random.randint(-200, 200))
+    leaf.sety(random.randint(-200,200))
+    leaf.st()
 def start_game():
     global game_started
     if game_started :
