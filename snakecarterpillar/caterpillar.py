@@ -48,7 +48,12 @@ def out_window(cater_length):
     #     cterr.shapesize(1,cater_length,1)
     return outside
 def game_over():
-    pass
+    cterr.color('white')
+    leaf.color('black')
+    t.penup()
+    t.hideturtle()
+    t.write('GAME OVER ! ', align= 'center', font=('Arial',30, 'normal'))
+
 def display_score(current_score):
     pass
 def place_leaf():
