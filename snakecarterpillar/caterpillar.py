@@ -55,7 +55,13 @@ def game_over():
     t.write('GAME OVER ! ', align= 'center', font=('Arial',30, 'normal'))
 
 def display_score(current_score):
-    pass
+    score_turtle.clear()
+    score_turtle.penup()
+    x = (t.window_width()/2) - 50
+    y = (t.window_height()/2) - 50
+    score_turtle.setpos(x,y)
+    score_turtle.write(str(current_score), align='right',\
+        font= ('Arial',30, 'bold'))
 def place_leaf():
     pass
 def start_game():
