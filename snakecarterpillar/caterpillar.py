@@ -1,25 +1,29 @@
 import random
 import turtle as t
-def cater():
-    t.bgcolor('light green')
+game_started = False
+text_turtle = t.Turtle()
+text_turtle.write('Press SPACE to start', align= 'center',\
+    font= ('Arial',16,'bold'))
 
-    cater.cterr = t.Turtle()
-    cater.cterr.shape('square')
-    cater.cterr.color('red')
+t.bgcolor('light green')
 
-    cater.cterr.speed(0)
-    cater.cterr.penup()
-    cater.cterr.hideturtle()
-def leaf():
-    leaf = t.Turtle()
-    leaf_shape =((0,0),(14,2),(18,6),(20,20), (6,18), (2,14))
+cterr = t.Turtle()
+cterr.shape('square')
+cterr.color('red')
 
-    t.register_shape('leaf', leaf_shape)
-    leaf.shape('leaf')
-    leaf.color('white')
-    leaf.penup()
-    leaf.hideturtle()
-    leaf.speed(0)
+cterr.speed(0)
+cterr.penup()
+cterr.hideturtle()
+
+leaf = t.Turtle()
+leaf_shape =((0,0),(14,2),(18,6),(20,20), (6,18), (2,14))
+
+t.register_shape('leaf', leaf_shape)
+leaf.shape('leaf')
+leaf.color('white')
+leaf.penup()
+leaf.hideturtle()
+leaf.speed(0)
     # leaf.mainloop()
 def out_window():
     pass
@@ -40,17 +44,17 @@ def start_game():
 
     cater_speed = 2
     cater_length = 3
-    cater.cterr.shapesize(1,cater_length, 1)
-    cater.cterr.showturtle()
+    cterr.shapesize(1,cater_length, 1)
+    cterr.showturtle()
     display_score(score)
     place_leaf()
 
     while True:
-        cater.cterr.forward(cater_speed)
-        if cater.cterr.distance(leaf) < 20 :
+        cterr.forward(cater_speed)
+        if cterr.distance(leaf) < 20 :
             place_leaf()
             cater_length = cater_length + 1
-            cater.cterr.shapesize(1,cater_length, 1)
+            cterr.shapesize(1,cater_length, 1)
             cater_speed = cater_speed + 1
             score = score + 10
             display_score(score)
