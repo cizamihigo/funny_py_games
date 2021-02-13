@@ -2,23 +2,23 @@ import random
 import time
 from tkinter import Tk, Button, DISABLED
 def show_symbol(x, y):
- global first
- global previousX, previousY
- buttons[x, y]['text'] = button_symbols[x, y]
- buttons[x, y].update_idletasks()
- if first:
- previousX = x
- previousY = y
- first = False
- elif previousX != x or previousY != y:
- if buttons[previousX, previousY]['text'] != buttons[x, y]['text']:
- time.sleep(0.5)
- buttons[previousX, previousY]['text'] = ''
- buttons[x, y]['text'] = ''
- else:
- buttons[previousX, previousY]['command'] = DISABLED
- buttons[x, y]['command'] = DISABLED
- first = True
+    global first
+    global previousX, previousY
+    buttons[x, y]['text'] = button_symbols[x, y]
+    buttons[x, y].update_idletasks()
+    if first:
+        previousX = x
+        previousY = y
+        first = False
+    elif previousX != x or previousY != y:
+        if buttons[previousX, previousY]['text'] != buttons[x, y]['text']:
+        time.sleep(0.5)
+        buttons[previousX, previousY]['text'] = ''
+        buttons[x, y]['text'] = ''
+        else:
+            buttons[previousX, previousY]['command'] = DISABLED
+            buttons[x, y]['command'] = DISABLED
+        first = True
 root = Tk()
 root.title('Matchmaker')
 root.resizable(width=False, height=False)
