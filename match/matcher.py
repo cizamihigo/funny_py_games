@@ -20,7 +20,7 @@ def show_symbol(x, y):
             buttons[x, y]['command'] = DISABLED
         first = True
 root = Tk()
-root.title('Matchmaker')
+root.title('GO Find Pairs')
 root.resizable(width=False, height=False)
 buttons = {}
 first = True
