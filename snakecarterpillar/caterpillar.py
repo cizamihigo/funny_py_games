@@ -53,6 +53,8 @@ def game_over():
     t.penup()
     t.hideturtle()
     t.write('GAME OVER ! ', align= 'center', font=('Arial',30, 'normal'))
+    t.onkey(start_game, 'space')
+    start_game()
 
 def display_score(current_score):
     score_turtle.clear()
