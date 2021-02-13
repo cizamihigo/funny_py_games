@@ -95,6 +95,20 @@ def start_game():
         if out_window(cater_length):
             game_over()
             break
+def move_up():
+    if cterr.heading() == 0 or cterr.heading() == 180 :
+        cterr.setheading(90)
+def move_down():
+    if cterr.heading() == 0 or cterr.heading() == 180 :
+        cterr.setheading(270)
+def move_left():
+    if cterr.heading() == 270 or cterr.heading() == 90 :
+        cterr.setheading(180)
+def move_left():
+    if cterr.heading() == 270 or cterr.heading() == 90 :
+        cterr.setheading(0)
+
+    
 t.onkey(start_game, 'space')
 t.listen()
 t.mainloop()
