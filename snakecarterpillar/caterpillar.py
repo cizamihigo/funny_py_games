@@ -31,8 +31,22 @@ score_turtle = t.Turtle()
 score_turtle.hideturtle()
 score_turtle.speed(0)
 
-def out_window():
-    pass
+def out_window(cater_length):
+    left_wall = -t.window_width() /2
+    right_wall = t.window_width() /2
+    top_wall = t.window_height() /2
+    bottom_wall = -t.window_height() /2
+    (x,y) = cterr.pos()
+    
+    outside = \
+        x < left_wall or \
+        x > right_wall or \
+        y < bottom_wall or \
+        y > top_wall
+    # while cater_length >= 1:
+    #     # cater_length -= 1 
+    #     cterr.shapesize(1,cater_length,1)
+    return outside
 def game_over():
     pass
 def display_score(current_score):
@@ -64,7 +78,7 @@ def start_game():
             cater_speed = cater_speed + 1
             score = score + 10
             display_score(score)
-        if out_window():
+        if out_window(cater_length):
             game_over()
             break
 t.onkey(start_game, 'space')
